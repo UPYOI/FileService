@@ -19,7 +19,6 @@ public class BaseResponse implements Serializable {
     /**
      * 返回码
      */
-     */
     private String retCode = "00";
 
     /**
