@@ -3,7 +3,6 @@ package com.songyutong.fileupload.vo;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * @author: songyutong
@@ -17,8 +16,15 @@ public class BaseResponse implements Serializable {
      */
     private Object data;
 
+    /**
+     * 返回码
+     */
+     */
     private String retCode = "00";
 
+    /**
+     * 返回消息
+     */
     private String retMsg = "处理成功";
 
     public static final String SUCCESS = "00";
