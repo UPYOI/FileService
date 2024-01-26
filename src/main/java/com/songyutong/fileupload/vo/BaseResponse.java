@@ -5,6 +5,8 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
+ * 基本响应类
+ *
  * @author: songyutong
  * @date: 2024/1/25
  */

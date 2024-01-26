@@ -32,13 +32,17 @@ public class FIleUploadService {
     public BaseResponse uploadFile(MultipartFile multipartFile, String fileName) {
         BaseResponse baseResponse = new BaseResponse();
         try {
-            File folder = new File(filePath);
+
+            String oldName = multipartFile.getOriginalFilename();
+            Assertions.assertNotNull(oldName);
+            // 按文件后缀名分类文件夹
+            String packageName = oldName.substring(oldName.lastIndexOf(".") + 1);
+            fileName = fileName + "." + packageName;
+
+            File folder = new File(filePath + packageName + "/");
             if (!folder.isDirectory()) {
                 folder.mkdirs();
             }
-            String oldName = multipartFile.getOriginalFilename();
-            Assertions.assertNotNull(oldName);
-            fileName = fileName + oldName.substring(oldName.lastIndexOf("."));
 
             File file = new File(folder, fileName);
             if (file.exists()) {
