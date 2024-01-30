@@ -34,7 +34,7 @@ public class FIleUploadService {
         try {
 
             String oldName = multipartFile.getOriginalFilename();
-            Assertions.assertNotNull(oldName);
+            Assertions.assertNotNull(oldName, "文件名为空");
             // 按文件后缀名分类文件夹
             String packageName = oldName.substring(oldName.lastIndexOf(".") + 1);
             fileName = fileName + "." + packageName;
